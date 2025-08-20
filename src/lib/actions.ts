@@ -2,12 +2,24 @@
 
 import { z } from 'zod';
 import { format } from 'date-fns';
+import nodemailer from 'nodemailer';
+import 'dotenv/config';
 
 const contactFormSchema = z.object({
-  name: z.string().min(2),
-  email: z.string().email(),
-  phone: z.string().min(10),
-  message: z.string().min(10).max(500),
+  name: z.string().min(2, {
+    message: "Name must be at least 2 characters.",
+  }),
+  email: z.string().email({
+    message: "Please enter a valid email address.",
+  }),
+  phone: z.string().min(10, {
+    message: "Please enter a valid phone number.",
+  }),
+  message: z.string().min(10, {
+    message: "Message must be at least 10 characters.",
+  }).max(500, {
+    message: "Message must not exceed 500 characters."
+  }),
 });
 
 type Message = {
@@ -32,7 +44,6 @@ export async function submitContactForm(values: z.infer<typeof contactFormSchema
   const { name, email, phone, message } = parsed.data;
 
   try {
-    // Instead of sending an email, we log it and store it in-memory.
     const newMessage: Message = {
         name,
         email,
@@ -41,8 +52,39 @@ export async function submitContactForm(values: z.infer<typeof contactFormSchema
         date: format(new Date(), 'yyyy-MM-dd HH:mm'),
     };
     
-    console.log('New Contact Form Submission:', newMessage);
-    messages.unshift(newMessage); // Add to the beginning of the array
+    messages.unshift(newMessage);
+
+    // For local development, it's easiest to use a service like Ethereal.
+    // Create a test account: https://ethereal.email/create
+    // And set the credentials in a .env file (see .env.example)
+    const transporter = nodemailer.createTransport({
+      host: process.env.SMTP_HOST || 'smtp.ethereal.email',
+      port: parseInt(process.env.SMTP_PORT || '587'),
+      secure: false, // true for 465, false for other ports
+      auth: {
+        user: process.env.SMTP_USER, // generated ethereal user
+        pass: process.env.SMTP_PASS, // generated ethereal password
+      },
+    });
+
+    const mailOptions = {
+      from: '"Tex Method Website" <noreply@texmethod.com>',
+      to: "roni.dboy@gmail.com",
+      subject: 'New Contact Form Submission',
+      html: `
+        <h2>New Message from your Website</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
+        <p><strong>Message:</strong></p>
+        <p>${message}</p>
+      `,
+    };
+
+    const info = await transporter.sendMail(mailOptions);
+    console.log('Message sent: %s', info.messageId);
+    // Preview only available when sending through an Ethereal account
+    console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
 
     return { success: true, message: 'Your message has been received!' };
 
