@@ -66,8 +66,10 @@ export function Footer() {
         </div>
 
         <div className="mt-8 border-t border-primary-foreground/20 pt-8 text-center text-sm text-primary-foreground/60">
-          <p>&copy; {new Date().getFullYear()} Tex Method Company Ltd. All rights reserved.</p>
-          <p className="mt-2">Developed by <a href="https://clickfix.cloud" target="_blank" rel="noopener noreferrer" className="hover:text-accent">ClickFix.Cloud</a></p>
+          <div className="flex flex-col items-center justify-center gap-2 md:flex-row md:justify-between">
+            <p>&copy; {new Date().getFullYear()} Tex Method Company Ltd. All rights reserved.</p>
+            <p>Developed by <a href="https://clickfix.cloud" target="_blank" rel="noopener noreferrer" className="hover:text-accent">ClickFix.Cloud</a></p>
+          </div>
         </div>
       </div>
     </footer>
