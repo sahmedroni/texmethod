@@ -6,12 +6,14 @@ import { format } from 'date-fns';
 const contactFormSchema = z.object({
   name: z.string().min(2),
   email: z.string().email(),
+  phone: z.string().min(10),
   message: z.string().min(10).max(500),
 });
 
 type Message = {
     name: string;
     email: string;
+    phone: string;
     message: string;
     date: string;
 }
@@ -27,13 +29,14 @@ export async function submitContactForm(values: z.infer<typeof contactFormSchema
     return { success: false, message: 'Invalid form data.' };
   }
   
-  const { name, email, message } = parsed.data;
+  const { name, email, phone, message } = parsed.data;
 
   try {
     // Instead of sending an email, we log it and store it in-memory.
     const newMessage: Message = {
         name,
         email,
+        phone,
         message,
         date: format(new Date(), 'yyyy-MM-dd HH:mm'),
     };

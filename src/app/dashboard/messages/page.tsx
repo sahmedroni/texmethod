@@ -43,6 +43,7 @@ export default async function MessagesDashboardPage() {
                   <TableRow>
                     <TableHead>Name</TableHead>
                     <TableHead>Email</TableHead>
+                    <TableHead>Phone</TableHead>
                     <TableHead>Message</TableHead>
                     <TableHead>Date</TableHead>
                   </TableRow>
@@ -52,6 +53,7 @@ export default async function MessagesDashboardPage() {
                     <TableRow key={index}>
                       <TableCell className="font-medium">{msg.name}</TableCell>
                       <TableCell>{msg.email}</TableCell>
+                      <TableCell>{msg.phone}</TableCell>
                       <TableCell>{msg.message}</TableCell>
                       <TableCell>{msg.date}</TableCell>
                     </TableRow>
