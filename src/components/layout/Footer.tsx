@@ -67,6 +67,7 @@ export function Footer() {
 
         <div className="mt-8 border-t border-primary-foreground/20 pt-8 text-center text-sm text-primary-foreground/60">
           <p>&copy; {new Date().getFullYear()} Tex Method Company Ltd. All rights reserved.</p>
+          <p className="mt-2">Developed by <a href="https://clickfix.cloud" target="_blank" rel="noopener noreferrer" className="hover:text-accent">ClickFix.Cloud</a></p>
         </div>
       </div>
     </footer>
