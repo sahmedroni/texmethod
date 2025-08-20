@@ -1,6 +1,7 @@
 'use server';
 
 import { z } from 'zod';
+import nodemailer from 'nodemailer';
 
 const contactFormSchema = z.object({
   name: z.string(),
@@ -15,19 +16,45 @@ export async function submitContactForm(values: z.infer<typeof contactFormSchema
     return { success: false, message: 'Invalid form data.' };
   }
 
-  // Here you would typically:
-  // 1. Save the data to a database (e.g., Firestore)
-  //    const { name, email, message } = parsed.data;
-  //    await db.collection('inquiries').add({ name, email, message, createdAt: new Date() });
-  //
-  // 2. Send an email notification (e.g., using SendGrid or Nodemailer)
-  //    await sendEmail({ to: 'admin@texmethod.com', subject: 'New Inquiry', text: `...` });
-  
-  console.log('Form submitted successfully:', parsed.data);
+  const { name, email, message } = parsed.data;
 
-  // Simulate a delay
-  await new Promise(resolve => setTimeout(resolve, 1000));
+  // IMPORTANT: You'll need to configure your email provider here.
+  // This example uses a test account from ethereal.email.
+  // For production, use a real SMTP service like SendGrid, Resend, or your own SMTP server.
+  // Store credentials in environment variables, not in the code.
+  const transporter = nodemailer.createTransport({
+    host: process.env.SMTP_HOST || 'smtp.ethereal.email',
+    port: parseInt(process.env.SMTP_PORT || '587', 10),
+    secure: (process.env.SMTP_SECURE || 'false') === 'true', // true for 465, false for other ports
+    auth: {
+      user: process.env.SMTP_USER || 'nettie.sauer36@ethereal.email', // generated ethereal user
+      pass: process.env.SMTP_PASS || 'Tz3n2p2B6Xk2yX6kQ2', // generated ethereal password
+    },
+  });
   
-  // For this example, we'll just return a success message.
-  return { success: true, message: 'Your message has been sent!' };
+  const mailOptions = {
+    from: `"Tex Method Contact Form" <${process.env.SMTP_USER || 'nettie.sauer36@ethereal.email'}>`, // sender address
+    to: 'info@texmethod.com', // list of receivers
+    replyTo: email,
+    subject: `New message from ${name}`, // Subject line
+    text: message, // plain text body
+    html: `
+      <h1>New Contact Form Submission</h1>
+      <p><strong>Name:</strong> ${name}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Message:</strong></p>
+      <p>${message.replace(/\n/g, '<br>')}</p>
+    `, // html body
+  };
+  
+  try {
+    const info = await transporter.sendMail(mailOptions);
+    console.log('Message sent: %s', info.messageId);
+    // You can see the preview URL if you're using an Ethereal account
+    console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+    return { success: true, message: 'Your message has been sent!' };
+  } catch (error) {
+    console.error('Error sending email:', error);
+    return { success: false, message: 'There was a problem sending your message. Please try again later.' };
+  }
 }
