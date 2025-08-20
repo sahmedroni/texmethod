@@ -31,23 +31,21 @@ export async function submitContactForm(values: z.infer<typeof contactFormSchema
   const { name, email, phone, message } = parsed.data;
 
   try {
-    // For local development, it's easiest to use a service like Ethereal.
-    // Create a test account: https://ethereal.email/create
-    // And set the credentials in a .env file (see .env.example)
+    // set the credentials in a .env file (see .env.example)
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST || 'smtp.ethereal.email',
+      host: process.env.SMTP_HOST || 'smtp.gmail.com',
       port: parseInt(process.env.SMTP_PORT || '587'),
       secure: false, // true for 465, false for other ports
       auth: {
-        user: process.env.SMTP_USER, // generated ethereal user
-        pass: process.env.SMTP_PASS, // generated ethereal password
+        user: process.env.SMTP_USER, // generated user
+        pass: process.env.SMTP_PASS, // generated password
       },
     });
 
     const mailOptions = {
-      from: '"Tex Method Website" <noreply@texmethod.com>',
+      from: '"Tex Method" <noreply@texmethod.com>',
       to: "roni.dboy@gmail.com",
-      subject: 'New Contact Form Submission',
+      subject: 'New Enquiry',
       html: `
         <h2>New Message from your Website</h2>
         <p><strong>Name:</strong> ${name}</p>
