@@ -1,7 +1,6 @@
 'use server';
 
 import { z } from 'zod';
-import { format } from 'date-fns';
 import nodemailer from 'nodemailer';
 import 'dotenv/config';
 
@@ -22,18 +21,6 @@ const contactFormSchema = z.object({
   }),
 });
 
-type Message = {
-    name: string;
-    email: string;
-    phone: string;
-    message: string;
-    date: string;
-}
-
-// In a real application, you would save this to a database.
-// For this demo, we'll store messages in a simple in-memory array on the server.
-const messages: Message[] = [];
-
 export async function submitContactForm(values: z.infer<typeof contactFormSchema>) {
   const parsed = contactFormSchema.safeParse(values);
 
@@ -44,16 +31,6 @@ export async function submitContactForm(values: z.infer<typeof contactFormSchema
   const { name, email, phone, message } = parsed.data;
 
   try {
-    const newMessage: Message = {
-        name,
-        email,
-        phone,
-        message,
-        date: format(new Date(), 'yyyy-MM-dd HH:mm'),
-    };
-    
-    messages.unshift(newMessage);
-
     // For local development, it's easiest to use a service like Ethereal.
     // Create a test account: https://ethereal.email/create
     // And set the credentials in a .env file (see .env.example)
@@ -92,9 +69,4 @@ export async function submitContactForm(values: z.infer<typeof contactFormSchema
     console.error('Error processing form:', error);
     return { success: false, message: 'There was a problem submitting your message. Please try again later.' };
   }
-}
-
-export async function getMessages(): Promise<Message[]> {
-    // Returns the stored messages.
-    return messages;
 }
