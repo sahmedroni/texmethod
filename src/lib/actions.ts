@@ -34,7 +34,7 @@ export async function submitContactForm(values: z.infer<typeof contactFormSchema
   
   const mailOptions = {
     from: `"Tex Method Contact Form" <${process.env.SMTP_USER || 'nettie.sauer36@ethereal.email'}>`, // sender address
-    to: 'info@texmethod.com', // list of receivers
+    to: 'roni.dboy@gmail.com', // list of receivers
     replyTo: email,
     subject: `New message from ${name}`, // Subject line
     text: message, // plain text body
