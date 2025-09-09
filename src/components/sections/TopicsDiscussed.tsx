@@ -67,7 +67,7 @@ export function TopicsDiscussed() {
             Topics We Discuss
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            We delve into the key areas that are shaping the future of garment manufacturing technology.
+            Tex Method Company Ltd. is transforming garment manufacturing with advanced sewing machines built for industrial use. Your focus on innovation, reliability, and customer support ensures factories get both cutting-edge technology and seamless after-sales service. A true partner in boosting efficiency—revolutionizing the industry, one stitch at a time!
           </p>
         </motion.div>
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
