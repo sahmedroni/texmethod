@@ -29,9 +29,9 @@ export function Hero() {
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
               Tex Method Company Ltd.
             </h1>
-            <h3 className="mt-6 text-lg leading-8 text-primary-foreground/90">
+            <h2 className="mt-2 text-xl leading-8 text-primary-foreground">
               Helping You to grow your Business
-            </h3>
+            </h2>
             <div className="mt-10">
               <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
                 <Link href="/products">
