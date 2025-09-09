@@ -29,7 +29,7 @@ export function ServiceHighlights() {
           className="mb-12 text-center"
         >
           <h2 className="text-3xl font-bold tracking-tight text-primary md:text-4xl">
-            Dedicated to Your Success: Our After-Sales Service
+            Dedicated to Your Success: Our Services
           </h2>
           <p className="mx-auto mt-4 max-w-3xl text-lg text-muted-foreground">
             Our commitment doesn't end at delivery. We provide comprehensive after-sales service to ensure your operations run smoothly and efficiently, always.
