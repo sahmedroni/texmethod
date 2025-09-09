@@ -18,7 +18,7 @@ export function AboutPreview() {
         >
           <div className="relative aspect-square h-full max-h-[500px] w-full overflow-hidden rounded-lg shadow-xl">
             <Image
-              src="https://placehold.co/600x600.png"
+              src="https://drive.google.com/uc?export=view&id=1x4SErqdu87_rwj4ZsX0N470TQ1nTivxd"
               alt="Team of engineers working on automated sewing machinery"
               fill
               className="object-cover"

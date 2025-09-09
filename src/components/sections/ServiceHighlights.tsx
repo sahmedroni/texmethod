@@ -8,13 +8,13 @@ const highlights = [
   {
     title: "Cutting-Edge Automation",
     description: "Our AI-driven machines optimize every stitch, reducing errors and boosting output.",
-    image: "https://placehold.co/600x400.png",
+    image: "https://drive.google.com/uc?export=view&id=1x4SErqdu87_rwj4ZsX0N470TQ1nTivxd",
     hint: "robot arm"
   },
   {
     title: "Sustainable Solutions",
     description: "We engineer for efficiency, minimizing fabric waste and energy consumption.",
-    image: "https://placehold.co/600x400.png",
+    image: "https://drive.google.com/uc?export=view&id=1voOyz7-Z9O3mASZFzT8regDU9tIOUumi",
     hint: "green technology"
   },
   {
