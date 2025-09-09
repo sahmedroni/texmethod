@@ -27,7 +27,7 @@ export function Hero() {
             className="max-w-3xl"
           >
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-              Tex Method company Ltd.
+              Tex Method Company Ltd.
             </h1>
             <p className="mt-6 text-lg leading-8 text-primary-foreground/90">
               Tex Method delivers cutting-edge automated sewing solutions that redefine speed, precision, and efficiency for the global apparel industry.
