@@ -2,28 +2,48 @@
 
 import { motion } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Lightbulb, Wrench, Package, Cpu } from 'lucide-react';
+import { Cpu, ShieldCheck, Zap, HeartHandshake, Cog, TrendingUp, Leaf, Award } from 'lucide-react';
 
 const topics = [
   {
     icon: Cpu,
-    title: "Smart Automation",
-    description: "Integrating AI and IoT for intelligent, self-optimizing production lines that reduce downtime and improve output.",
+    title: "Advanced Technology",
+    description: "Explore innovative features like automated stitching, precision controls, and digital system integration in our machines.",
   },
   {
-    icon: Wrench,
-    title: "Preventive Maintenance",
-    description: "Strategies for proactive machinery care to ensure longevity and peak performance, minimizing unexpected breakdowns.",
+    icon: ShieldCheck,
+    title: "Industrial Durability",
+    description: "Our machines are engineered to withstand demanding factory environments, ensuring long-term reliability and minimal downtime.",
   },
   {
-    icon: Lightbulb,
-    title: "Sustainable Manufacturing",
-    description: "Exploring eco-friendly technologies and processes that reduce waste, conserve energy, and promote a greener future.",
+    icon: Zap,
+    title: "Enhancing Production Efficiency",
+    description: "Streamline production processes, increase throughput, and reduce labor costs for ultimate manufacturing efficiency.",
   },
   {
-    icon: Package,
-    title: "Supply Chain Integration",
-    description: "How connected machinery can streamline your supply chain, from raw materials to finished product.",
+    icon: HeartHandshake,
+    title: "Customer-Centric Service",
+    description: "Exceptional after-sales support, including maintenance, troubleshooting, and training for smooth operations.",
+  },
+  {
+    icon: Cog,
+    title: "Tailored Solutions for Needs",
+    description: "Customized sewing solutions for specific garment types, production volumes, and manufacturing requirements.",
+  },
+  {
+    icon: TrendingUp,
+    title: "Industry Trends & Future",
+    description: "Staying ahead of the curve by continuously innovating and adapting our products to meet evolving industry demands.",
+  },
+  {
+    icon: Leaf,
+    title: "Sustainability in Manufacturing",
+    description: "Eco-friendly processes, energy-efficient technologies, and efforts to minimize waste in garment production.",
+  },
+  {
+    icon: Award,
+    title: "Customer Success Stories",
+    description: "Real-world examples of increased productivity and operational improvements from our valued partners.",
   },
 ];
 
@@ -58,17 +78,17 @@ export function TopicsDiscussed() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.5, delay: index * 0.15 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <Card className="text-center h-full">
                 <CardHeader>
                   <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
                     <topic.icon className="h-6 w-6 text-primary" />
                   </div>
-                  <CardTitle>{topic.title}</CardTitle>
+                  <CardTitle className="mt-2 text-lg">{topic.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">{topic.description}</p>
+                  <p className="text-muted-foreground text-sm">{topic.description}</p>
                 </CardContent>
               </Card>
             </motion.div>
