@@ -37,7 +37,7 @@ export function AboutPreview() {
             Decades of Innovation in Garment Technology
           </h2>
           <p className="text-lg text-muted-foreground">
-            Tex Method is at the forefront of the apparel industry's technological evolution. From our headquarters in Dhaka, we design and manufacture state-of-the-art automated sewing machines that empower businesses worldwide to achieve unparalleled levels of efficiency and quality.
+            Welcome to Tex Method Company Ltd.—your trusted source for advanced automatic sewing machines built for garment factories. We deliver state-of-the-art technology to boost efficiency, reliability, and precision in every stitch. More than machines, we provide dedicated after-sales service, expert support, and maintenance to keep your production running at peak performance. With Tex Method, you get innovation, durability, and seamless operations—shaping the future of garment manufacturing.
           </p>
           <p className="text-muted-foreground">
             Our mission is to build the future of garment production—a future that is smarter, faster, and more sustainable.
