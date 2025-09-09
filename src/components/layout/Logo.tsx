@@ -4,7 +4,7 @@ export function Logo() {
   return (
     <div className="flex items-center justify-center gap-2">
       <Image 
-        src="https://placehold.co/150x50.png" 
+        src="https://drive.google.com/uc?export=view&id=1z00lCKXuyQnXZTbdOkJpcYuQdvflvUy1" 
         alt="Tex Method Logo" 
         width={150} 
         height={50}
