@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Cpu, ShieldCheck, Zap, HeartHandshake, Cog, TrendingUp, Leaf, Award } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 const topics = [
   {
@@ -52,6 +53,13 @@ const cardVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
+const iconColors = [
+  "bg-primary/10 text-primary",
+  "bg-accent/10 text-accent",
+  "bg-green-500/10 text-green-600",
+  "bg-blue-500/10 text-blue-600",
+];
+
 export function TopicsDiscussed() {
   return (
     <section>
@@ -82,8 +90,11 @@ export function TopicsDiscussed() {
             >
               <Card className="text-center h-full">
                 <CardHeader>
-                  <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
-                    <topic.icon className="h-6 w-6 text-primary" />
+                  <div className={cn(
+                      "mx-auto flex h-12 w-12 items-center justify-center rounded-full",
+                      iconColors[index % iconColors.length]
+                    )}>
+                    <topic.icon className="h-6 w-6" />
                   </div>
                   <CardTitle className="mt-2 text-lg">{topic.title}</CardTitle>
                 </CardHeader>
