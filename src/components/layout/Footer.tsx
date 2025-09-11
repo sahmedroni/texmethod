@@ -31,7 +31,7 @@ export function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div>
+          <div className="flex flex-col items-center text-center md:items-start md:text-left">
             <h3 className="font-semibold">Quick Links</h3>
             <ul className="mt-4 space-y-2">
               {navLinks.map((link) => (
@@ -45,7 +45,7 @@ export function Footer() {
           </div>
           
           {/* Services */}
-          <div>
+          <div className="flex flex-col items-center text-center md:items-start md:text-left">
             <h3 className="font-semibold">Services</h3>
             <ul className="mt-4 space-y-2 text-sm">
                 <li><Link href="/services" className="text-primary-foreground/80 hover:text-accent">Installation Support</Link></li>
@@ -55,7 +55,7 @@ export function Footer() {
           </div>
 
           {/* Contact Info */}
-          <div>
+          <div className="flex flex-col items-center text-center md:items-start md:text-left">
             <h3 className="font-semibold">Contact Us</h3>
             <address className="mt-4 space-y-2 text-sm not-italic text-primary-foreground/80">
               <p>123 Garment Avenue, Dhaka, Bangladesh</p>
