@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { LifeBuoy, Wrench, Users, GraduationCap, Clock, Signal, Package, TrendingUp, Star, Handshake } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 const services = [
   { icon: Wrench, title: "Proactive Maintenance" },
@@ -15,6 +16,14 @@ const services = [
   { icon: TrendingUp, title: "Continuous Improvement" },
   { icon: Star, title: "Customer Satisfaction Monitoring" },
   { icon: Handshake, title: "Partnerships for Enhanced Service" },
+];
+
+const iconColors = [
+  "bg-primary/10 text-primary",
+  "bg-accent/10 text-accent",
+  "bg-green-500/10 text-green-600",
+  "bg-blue-500/10 text-blue-600",
+  "bg-orange-500/10 text-orange-600",
 ];
 
 export function ServiceHighlights() {
@@ -46,8 +55,11 @@ export function ServiceHighlights() {
             >
               <Card className="h-full text-center">
                 <CardHeader>
-                  <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
-                    <item.icon className="h-6 w-6 text-primary" />
+                  <div className={cn(
+                    "mx-auto flex h-12 w-12 items-center justify-center rounded-full",
+                    iconColors[index % iconColors.length]
+                  )}>
+                    <item.icon className="h-6 w-6" />
                   </div>
                 </CardHeader>
                 <CardContent>
