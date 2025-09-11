@@ -10,14 +10,14 @@ export function Hero() {
   return (
     <section className="relative h-[80vh] min-h-[500px] w-full overflow-hidden">
       <Image
-        src="https://placehold.co/1920x1080.png"
+        src="https://drive.google.com/uc?export=download&id=1IpyBJTpx1lZmvSuq0YIZrJPBsGksQ63F"
         alt="Automated sewing machines in a modern garment factory"
         fill
         className="object-cover"
         priority
         data-ai-hint="sewing factory"
       />
-      <div className="absolute inset-0 bg-primary/70" />
+      <div className="absolute inset-0 bg-primary/40" />
       <div className="relative z-10 flex h-full items-center">
         <div className="container mx-auto max-w-7xl px-4 text-primary-foreground">
           <motion.div
