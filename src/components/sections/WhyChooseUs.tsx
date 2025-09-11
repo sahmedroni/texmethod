@@ -2,6 +2,7 @@
 
 import { Zap, Target, Globe, LifeBuoy } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { cn } from '@/lib/utils';
 
 const features = [
   {
@@ -41,6 +42,13 @@ const itemVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
+const iconColors = [
+  "bg-primary/10 text-primary",
+  "bg-accent/10 text-accent",
+  "bg-green-500/10 text-green-600",
+  "bg-blue-500/10 text-blue-600",
+];
+
 export function WhyChooseUs() {
   return (
     <section>
@@ -60,13 +68,16 @@ export function WhyChooseUs() {
           viewport={{ once: true, amount: 0.2 }}
           className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4"
         >
-          {features.map((feature) => (
+          {features.map((feature, index) => (
             <motion.div
               key={feature.title}
               variants={itemVariants}
               className="text-center"
             >
-              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
+              <div className={cn(
+                "mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full",
+                iconColors[index % iconColors.length]
+              )}>
                 <feature.icon className="h-8 w-8" />
               </div>
               <h3 className="text-xl font-semibold text-primary">{feature.title}</h3>
