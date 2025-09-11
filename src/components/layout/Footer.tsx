@@ -9,7 +9,7 @@ export function Footer() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           {/* Company Info */}
-          <div className="md:col-span-1">
+          <div className="md:col-span-1 flex flex-col items-center text-center">
             <Logo />
             <p className="mt-4 text-sm text-primary-foreground/80">
               Innovating the future of garment manufacturing since 2015.
