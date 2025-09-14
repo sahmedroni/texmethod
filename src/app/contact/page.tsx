@@ -35,7 +35,7 @@ export default function ContactPage() {
                 <MapPin className="mt-1 h-6 w-6 shrink-0 text-accent" />
                 <div>
                   <h3 className="font-semibold">Address</h3>
-                  <p className="text-muted-foreground">Office House Name-Priyo Darshini, House- 1256 (4th Floor), Road-09, DOHS, Mirpur, Dhaka-1216, Bangladesh</p>
+                  <p className="text-muted-foreground">House: Priyo Darshini, House no.:- 1256 (4th Floor), Road-09, DOHS, Mirpur, Dhaka-1216, Bangladesh</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
