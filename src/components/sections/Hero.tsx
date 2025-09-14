@@ -24,7 +24,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="max-w-3xl"
+            className="mx-auto max-w-3xl text-center"
           >
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
               Tex Method Company Ltd.
