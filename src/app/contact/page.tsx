@@ -66,13 +66,17 @@ export default function ContactPage() {
               </Button>
             </div>
             <div className="relative mt-8 h-64 w-full overflow-hidden rounded-lg shadow-md md:h-80">
-               <Image 
-                src="https://placehold.co/600x400.png" 
-                alt="Map showing location of Tex Method Company Ltd. in Dhaka, Bangladesh" 
-                layout="fill"
-                objectFit="cover"
-                data-ai-hint="city map"
-              />
+              <iframe
+                src="https://www.google.com/maps?q=23.837444,90.365972&z=15&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Tex Method Location"
+                className="absolute inset-0"
+              ></iframe>
             </div>
           </div>
 
