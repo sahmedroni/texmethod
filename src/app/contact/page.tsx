@@ -35,7 +35,7 @@ export default function ContactPage() {
                 <MapPin className="mt-1 h-6 w-6 shrink-0 text-accent" />
                 <div>
                   <h3 className="font-semibold">Address</h3>
-                  <p className="text-muted-foreground">123 Garment Avenue, Dhaka, Bangladesh</p>
+                  <p className="text-muted-foreground">Office House Name-Priyo Darshini, House- 1256 (4th Floor), Road-09, DOHS, Mirpur, Dhaka-1216, Bangladesh</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -49,18 +49,18 @@ export default function ContactPage() {
                 <Phone className="mt-1 h-6 w-6 shrink-0 text-accent" />
                 <div>
                   <h3 className="font-semibold">Phone</h3>
-                  <a href="tel:+8801234567890" className="text-muted-foreground hover:text-primary">+880 123 456 7890</a>
+                  <a href="tel:+8801716313280" className="text-muted-foreground hover:text-primary">+8801716313280</a>
                 </div>
               </div>
             </div>
             <div className="mt-6 flex space-x-4">
               <Button asChild>
-                <a href="https://wa.me/8801234567890" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/8801716313280" target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="mr-2 h-5 w-5" /> WhatsApp
                 </a>
               </Button>
               <Button variant="outline" asChild>
-                <a href="tel:+8801234567890">
+                <a href="tel:+8801716313280">
                   <Phone className="mr-2 h-5 w-5" /> Call Us
                 </a>
               </Button>

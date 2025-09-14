@@ -58,9 +58,9 @@ export function Footer() {
           <div className="flex flex-col items-center text-center md:items-start md:text-left">
             <h3 className="font-semibold">Contact Us</h3>
             <address className="mt-4 space-y-2 text-sm not-italic text-primary-foreground/80">
-              <p>123 Garment Avenue, Dhaka, Bangladesh</p>
+              <p>Office House Name-Priyo Darshini, House- 1256 (4th Floor), Road-09, DOHS, Mirpur, Dhaka-1216, Bangladesh</p>
               <p>Email: <a href="mailto:info@texmethod.com" className="hover:text-accent">info@texmethod.com</a></p>
-              <p>Phone: <a href="tel:+8801234567890" className="hover:text-accent">+880 123 456 7890</a></p>
+              <p>Phone: <a href="tel:+8801716313280" className="hover:text-accent">+8801716313280</a></p>
             </address>
           </div>
         </div>
